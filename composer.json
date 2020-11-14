@@ -1,0 +1,7 @@
+{
+    "autoload": {
+        "Core\\": "core/",
+        "Models\\": "Models/",
+        "Controllers\\": "Controllers/"
+    }
+}
