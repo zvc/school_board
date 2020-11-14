@@ -9,7 +9,7 @@ class Router
         $url = trim($url);
 
         if ($url == 'school_board') {
-            $request->controller = 'boards';
+            $request->controller = 'students';
             $request->action = 'index';
             $request->params = [];
         } else {

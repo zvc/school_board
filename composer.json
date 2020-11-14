@@ -1,7 +1,12 @@
 {
     "autoload": {
-        "Core\\": "core/",
-        "Models\\": "Models/",
-        "Controllers\\": "Controllers/"
+        "psr-4": {
+            "Core\\": "Core/",
+            "Models\\": "Models/",
+            "Controllers\\": "Controllers/"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.0"
     }
 }

@@ -1,0 +1,14 @@
+CREATE DATABASE school;
+
+CREATE TABLE students (
+    `id`  int(10) UNSIGNED NOT NULL PRIMARY KEY,
+    `student_name` VARCHAR(255) NOT NULL,
+    `school` ENUM('CSM', 'CSMB'),
+    `result` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE grades (
+    `id` INT(10) UNSIGNED NOT NULL PRIMARY KEY,
+    `student_id` INT(10) NOT NULL,
+    `grade` INT(10) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

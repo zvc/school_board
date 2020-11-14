@@ -6,12 +6,14 @@ use PDO;
 
 class Database
 {
-    private static $cnn = null;
+    private static $bdd = null;
 
-    public function getCnn()
+    public function getBdd()
     {
-        if (is_null(self::$cnn)) {
-            self::$cnn = new PDO ("mysql:host=localhost;dbname=school", 'root', '');
+        if (is_null(self::$bdd)) {
+            self::$bdd = new PDO ("mysql:host=localhost;dbname=school", 'root', '');
         }
+
+        return self::$bdd;
     }
 }

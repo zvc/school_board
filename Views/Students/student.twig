@@ -1,0 +1,32 @@
+{% extends 'layout.twig' %}
+
+{% block content_for_layout %}
+<h1>Studens</h1>
+<div class="row col-md-12 centered">
+    <table class="table table-striped custab">
+        <thead>
+        <a href="/school_boards/students/index/" class="btn btn-primary btn-xs pull-right">Back</a>
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>School</th>
+                <th>Grades</th>
+                <th>Average</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.school }}</td>
+                <td>
+                    {{% for grade in grades %}}
+                        <span>{{ grade }}, </span>
+                    {{% endfor %}}
+                </td>
+                <td>{{ student.average }}</td>
+                <td>{{ student.result }}</td>
+            </tr>
+    </table>
+</div>
+{% endblock %}

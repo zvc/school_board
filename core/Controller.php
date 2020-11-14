@@ -2,6 +2,9 @@
 
 namespace Core;
 
+use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
+
 class Controller
 {
     public $vars = [];
@@ -13,7 +16,11 @@ class Controller
 
     public function render($tpl)
     {
-        echo 'test';
+        $tplPath = ROOT . 'Views/' . ucfirst(substr(str_replace('Controller', '', get_class($this)),2)) . '/';
+        $loader = new FilesystemLoader($tplPath);
+        $twig = new Environment($loader);
+        $template = $tpl . '.twig';
+        echo $twig->render($template, $this->vars);
     }
 
     private function secure_input($data)

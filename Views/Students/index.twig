@@ -1,0 +1,37 @@
+{% extends 'layout.twig' %}
+
+{% block content_for_layout %}
+<h1>Students</h1>
+<div class="row col-md-12 centered">
+    <table class="table table-striped custab">
+        <thead>
+        <a href="/school_boards/students/create/" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new student</a>
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>School</th>
+                <th>Grades</th>
+                <th>Average</th>
+                <th>Result</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        {% for student in students %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.school }}</td>
+                <td>{{ student.average}}</td>
+                <td>{{ student.result}}
+                <td>
+                    <a class='btn btn-info btn-xs' href='/school_board/boards/edit/{{ user.id}}'><span class='glyphicon glyphicon-edit'>Edit</span></a>
+                    <a class='btn btn-danger btn-xs' href='/school_board/boards/delete/{{ user.id }}'><span class='glyphicon glyphicon-remove'>Delete</span></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    </table>
+</div>
+{% endblock %}

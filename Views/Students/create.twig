@@ -1,0 +1,20 @@
+{% extends 'layout.twig' %}
+
+{% block content_for_layout %}
+<h1>Create student</h1>
+<form method='post' action='#'>
+    <div class="form-group">
+        <label for="title">Name</label>
+        <input type="text" class="form-control" id="title" placeholder="Enter a title" name="title">
+    </div>
+
+    <div class="form-group">
+        <label for="description">School</label>
+        <select name="school" id="school">
+            <option value="CMS">CMS</option>
+            <option value="CSMB">CSMB</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
